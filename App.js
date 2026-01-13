@@ -89,3 +89,19 @@ function enableNotifications() {
     if (p === "granted") alert("Powiadomienia włączone");
   });
 }
+function samsungReminder({ title, description, time }) {
+  // time: "HH:MM"
+  const [h, m] = time.split(":");
+
+  const text = `${title}\n${description}\nGodzina: ${time}`;
+
+  // Samsung Reminder reaguje na intent tekstowy
+  const url =
+    "intent:#Intent;" +
+    "action=android.intent.action.SEND;" +
+    "type=text/plain;" +
+    `S.android.intent.extra.TEXT=${encodeURIComponent(text)};` +
+    "end";
+
+  window.location.href = url;
+}
