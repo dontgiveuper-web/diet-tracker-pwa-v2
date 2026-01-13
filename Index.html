@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diet Tracker PWA v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<h1>🍽️ Diet Tracker</h1>
+
+<section>
+  <h2>🔍 Produkty</h2>
+  <input id="search" placeholder="Szukaj produktu..." />
+  <button onclick="voiceSearch()">🎤</button>
+  <button onclick="scanBarcode()">📷 Kod</button>
+  <ul id="results"></ul>
+</section>
+
+<section>
+  <h2>💊 Suplementy</h2>
+  <button onclick="addSupplement()">➕ Dodaj suplement</button>
+  <ul id="supplementList"></ul>
+</section>
+
+<section>
+  <h2>⏰ Okno jedzenia</h2>
+  <label>Pierwszy posiłek:
+    <input type="time" id="firstMeal" value="10:00">
+  </label>
+  <label>Koniec okna:
+    <input type="time" id="lastMeal" value="18:00">
+  </label>
+  <button onclick="saveFasting()">💾 Zapisz</button>
+</section>
+
+<button onclick="enableNotifications()">🔔 Włącz powiadomienia</button>
+
+<script src="app.js"></script>
+</body>
+</html>
